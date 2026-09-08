@@ -1,0 +1,1354 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mutual Funds | Amandeep Singh</title>
+
+    <!-- ================= CSS ================= -->
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f8fc;
+            color: #172033;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #071a33;
+            padding: 18px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        .menu-btn {
+            display: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 7%;
+            color: white;
+
+            background:
+                linear-gradient(rgba(7,26,51,0.93), rgba(7,26,51,0.93)),
+                linear-gradient(135deg, #0f3b6d, #071a33);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #dbeafe;
+            margin-bottom: 30px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: #38bdf8;
+            color: #071a33;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        /* ================= COMMON SECTION ================= */
+
+        .section {
+            padding: 75px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #071a33;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+        /* ================= FUND TYPES ================= */
+
+        .fund-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .fund-card {
+            background: white;
+            padding: 30px 24px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 8px 30px rgba(15,23,42,0.07);
+            transition: 0.3s;
+        }
+
+        .fund-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(15,23,42,0.13);
+        }
+
+        .fund-icon {
+            width: 70px;
+            height: 70px;
+            background: #e0f2fe;
+            border-radius: 50%;
+            margin: 0 auto 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 34px;
+        }
+
+        .fund-card h3 {
+            color: #071a33;
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .fund-card p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ================= INVESTMENT INFORMATION ================= */
+
+        .info-section {
+            background: white;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .info-card {
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .info-card h3 {
+            color: #071a33;
+            margin-bottom: 12px;
+        }
+
+        .info-card p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        /* ================= CALCULATOR ================= */
+
+        .calculator-section {
+            background: #eef5fb;
+        }
+
+        .calculator {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(15,23,42,0.09);
+        }
+
+        .calculator h2 {
+            text-align: center;
+            color: #071a33;
+            margin-bottom: 30px;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #334155;
+            font-size: 14px;
+        }
+
+        .input-group input,
+        .input-group select {
+            padding: 13px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: #38bdf8;
+        }
+
+        .range-value {
+            text-align: center;
+            font-weight: bold;
+            color: #0284c7;
+            margin-top: 8px;
+        }
+
+        .calculate-btn {
+            grid-column: 1 / -1;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #071a33;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .calculate-btn:hover {
+            background: #38bdf8;
+            color: #071a33;
+        }
+
+        /* ================= RESULTS ================= */
+
+        .results {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .result-box {
+            padding: 22px;
+            background: #f8fafc;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .result-box h4 {
+            color: #64748b;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .result-box p {
+            color: #071a33;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        /* ================= FORM ================= */
+
+        .form-section {
+            background: white;
+        }
+
+        .form-container {
+            max-width: 850px;
+            margin: auto;
+            padding: 40px;
+            background: #f8fafc;
+            border-radius: 18px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #071a33;
+            margin-bottom: 10px;
+        }
+
+        .form-container > p {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #334155;
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 13px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            grid-column: 1 / -1;
+            padding: 15px;
+            background: #071a33;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #38bdf8;
+            color: #071a33;
+        }
+
+        /* ================= DISCLAIMER ================= */
+
+        .disclaimer {
+            padding: 25px 7%;
+            text-align: center;
+            color: #64748b;
+            font-size: 13px;
+            background: #f5f8fc;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #071a33;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 1000px) {
+
+            .fund-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: #071a33;
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+                gap: 18px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section {
+                padding: 55px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 29px;
+            }
+
+            .fund-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .calculator {
+                padding: 25px;
+            }
+
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .results {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 25px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full,
+            .submit-btn,
+            .calculate-btn {
+                grid-column: auto;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                Amandeep <span>Singh</span>
+            </div>
+
+            <div class="menu-btn" id="menuBtn">
+                ☰
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="sip.html">SIP</a>
+                </li>
+
+                <li>
+                    <a href="mutual-funds.html">Mutual Funds</a>
+                </li>
+
+                <li>
+                    <a href="insurance.html">Insurance</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Invest Smarter with
+                <span>Mutual Funds</span>
+            </h1>
+
+            <p>
+                Explore mutual fund investment options and
+                understand how disciplined investing can help
+                you work towards your financial goals.
+            </p>
+
+            <a href="#contact" class="hero-btn">
+                Start Your Investment Journey
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MUTUAL FUND TYPES ================= -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>Mutual Fund Solutions</h2>
+
+            <p>
+                Different fund categories for different investment needs
+            </p>
+
+        </div>
+
+
+        <div class="fund-grid">
+
+
+            <div class="fund-card">
+
+                <div class="fund-icon">
+                    📈
+                </div>
+
+                <h3>Equity Funds</h3>
+
+                <p>
+                    Funds that primarily invest in equity and
+                    equity-related securities and may suit
+                    investors seeking long-term growth.
+                </p>
+
+            </div>
+
+
+            <div class="fund-card">
+
+                <div class="fund-icon">
+                    🏦
+                </div>
+
+                <h3>Debt Funds</h3>
+
+                <p>
+                    Funds that primarily invest in fixed-income
+                    securities and may be considered for different
+                    risk and investment objectives.
+                </p>
+
+            </div>
+
+
+            <div class="fund-card">
+
+                <div class="fund-icon">
+                    ⚖️
+                </div>
+
+                <h3>Hybrid Funds</h3>
+
+                <p>
+                    Funds that combine different asset classes
+                    according to their investment strategy.
+                </p>
+
+            </div>
+
+
+            <div class="fund-card">
+
+                <div class="fund-icon">
+                    🎯
+                </div>
+
+                <h3>Goal Based</h3>
+
+                <p>
+                    Investment planning can be structured around
+                    goals such as education, wealth creation or retirement.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INVESTMENT INFORMATION ================= -->
+
+    <section class="section info-section">
+
+        <div class="section-title">
+
+            <h2>Things to Know Before Investing</h2>
+
+            <p>
+                Understand the basics before selecting a mutual fund
+            </p>
+
+        </div>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-card">
+
+                <h3>📊 Market Linked</h3>
+
+                <p>
+                    Mutual fund returns are linked to the performance
+                    of the underlying investments and can fluctuate
+                    with market conditions.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>⏳ Investment Horizon</h3>
+
+                <p>
+                    Your investment horizon should be considered
+                    when evaluating different mutual fund categories
+                    and strategies.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>⚠️ Risk</h3>
+
+                <p>
+                    Every mutual fund carries some level of risk.
+                    Past performance does not guarantee future returns.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CALCULATOR ================= -->
+
+    <section class="section calculator-section">
+
+        <div class="calculator">
+
+            <h2>Mutual Fund Calculator</h2>
+
+
+            <div class="calculator-grid">
+
+
+                <!-- INVESTMENT AMOUNT -->
+
+                <div class="input-group">
+
+                    <label for="amount">
+                        Investment Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="amount"
+                        value="5000"
+                        min="100"
+                        placeholder="Enter amount"
+                    >
+
+                </div>
+
+
+                <!-- FREQUENCY -->
+
+                <div class="input-group">
+
+                    <label for="frequency">
+                        Investment Frequency
+                    </label>
+
+                    <select id="frequency">
+
+                        <option value="monthly">
+                            Monthly
+                        </option>
+
+                        <option value="yearly">
+                            Yearly
+                        </option>
+
+                        <option value="lumpsum">
+                            Lumpsum
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TIME PERIOD -->
+
+                <div class="input-group">
+
+                    <label for="years">
+                        Investment Period
+                    </label>
+
+                    <select id="years">
+
+                        <option value="3">3 Years</option>
+                        <option value="5">5 Years</option>
+                        <option value="10">10 Years</option>
+                        <option value="11">11 Years</option>
+                        <option value="15">15 Years</option>
+                        <option value="20">20 Years</option>
+                        <option value="25">25 Years</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- RETURN -->
+
+                <div class="input-group">
+
+                    <label for="rate">
+                        Expected Annual Return
+                    </label>
+
+                    <input
+                        type="range"
+                        id="rate"
+                        min="1"
+                        max="30"
+                        value="12"
+                    >
+
+                    <div class="range-value">
+                        <span id="rateValue">12</span>%
+                    </div>
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    class="calculate-btn"
+                    onclick="calculateInvestment()">
+
+                    Calculate Investment
+
+                </button>
+
+            </div>
+
+
+            <!-- RESULTS -->
+
+            <div class="results">
+
+
+                <div class="result-box">
+
+                    <h4>
+                        Total Invested
+                    </h4>
+
+                    <p id="invested">
+                        ₹0
+                    </p>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <h4>
+                        Estimated Return
+                    </h4>
+
+                    <p id="returns">
+                        ₹0
+                    </p>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <h4>
+                        Total Value
+                    </h4>
+
+                    <p id="total">
+                        ₹0
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT FORM ================= -->
+
+    <section class="section form-section" id="contact">
+
+        <div class="form-container">
+
+            <h2>
+                Get Mutual Fund Assistance
+            </h2>
+
+            <p>
+                Fill in your details and share your investment requirement.
+            </p>
+
+
+            <form id="mfForm">
+
+                <div class="form-grid">
+
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter email address"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- AMOUNT -->
+
+                    <div class="form-group">
+
+                        <label for="investmentAmount">
+                            Investment Amount
+                        </label>
+
+                        <input
+                            type="number"
+                            id="investmentAmount"
+                            placeholder="Example: ₹5000"
+                        >
+
+                    </div>
+
+
+                    <!-- FUND TYPE -->
+
+                    <div class="form-group">
+
+                        <label for="fundType">
+                            Fund Type
+                        </label>
+
+                        <select id="fundType">
+
+                            <option value="">
+                                Select Fund Type
+                            </option>
+
+                            <option value="Equity Fund">
+                                Equity Fund
+                            </option>
+
+                            <option value="Debt Fund">
+                                Debt Fund
+                            </option>
+
+                            <option value="Hybrid Fund">
+                                Hybrid Fund
+                            </option>
+
+                            <option value="Not Sure">
+                                Not Sure
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- RISK -->
+
+                    <div class="form-group">
+
+                        <label for="risk">
+                            Risk Preference
+                        </label>
+
+                        <select id="risk">
+
+                            <option value="">
+                                Select Risk Preference
+                            </option>
+
+                            <option value="Conservative">
+                                Conservative
+                            </option>
+
+                            <option value="Moderate">
+                                Moderate
+                            </option>
+
+                            <option value="Aggressive">
+                                Aggressive
+                            </option>
+
+                            <option value="Not Sure">
+                                Not Sure
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- REQUIREMENT -->
+
+                    <div class="form-group full">
+
+                        <label for="requirement">
+                            Your Requirement
+                        </label>
+
+                        <textarea
+                            id="requirement"
+                            placeholder="Tell us about your investment goal..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="submit-btn">
+
+                        Submit Enquiry
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DISCLAIMER ================= -->
+
+    <div class="disclaimer">
+
+        <strong>Disclaimer:</strong>
+        Mutual fund investments are subject to market risks.
+        Read all scheme-related documents carefully before investing.
+        Past performance does not guarantee future returns.
+        Calculator results are illustrative and do not represent
+        guaranteed returns.
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Amandeep Singh. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        /* ================= MOBILE MENU ================= */
+
+        const menuBtn = document.getElementById("menuBtn");
+
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", function() {
+
+            navLinks.classList.toggle("active");
+
+        });
+
+
+        /* ================= RETURN SLIDER ================= */
+
+        const rateSlider =
+            document.getElementById("rate");
+
+        const rateValue =
+            document.getElementById("rateValue");
+
+        rateSlider.addEventListener("input", function() {
+
+            rateValue.textContent = this.value;
+
+        });
+
+
+        /* ================= FORMAT MONEY ================= */
+
+        function formatMoney(number) {
+
+            return "₹" + Math.round(number).toLocaleString("en-IN");
+
+        }
+
+
+        /* ================= CALCULATOR ================= */
+
+        function calculateInvestment() {
+
+            const amount =
+                Number(document.getElementById("amount").value);
+
+            const frequency =
+                document.getElementById("frequency").value;
+
+            const years =
+                Number(document.getElementById("years").value);
+
+            const annualRate =
+                Number(document.getElementById("rate").value);
+
+
+            if (amount <= 0) {
+
+                alert("Please enter a valid investment amount.");
+
+                return;
+
+            }
+
+
+            let investedAmount = 0;
+
+            let futureValue = 0;
+
+
+            /* MONTHLY INVESTMENT */
+
+            if (frequency === "monthly") {
+
+                const months = years * 12;
+
+                const monthlyRate =
+                    annualRate / 100 / 12;
+
+                investedAmount =
+                    amount * months;
+
+
+                if (monthlyRate === 0) {
+
+                    futureValue = investedAmount;
+
+                } else {
+
+                    futureValue =
+                        amount *
+                        (
+                            (Math.pow(
+                                1 + monthlyRate,
+                                months
+                            ) - 1) / monthlyRate
+                        ) *
+                        (1 + monthlyRate);
+
+                }
+
+            }
+
+
+            /* YEARLY INVESTMENT */
+
+            else if (frequency === "yearly") {
+
+                const yearlyRate =
+                    annualRate / 100;
+
+                investedAmount =
+                    amount * years;
+
+
+                if (yearlyRate === 0) {
+
+                    futureValue = investedAmount;
+
+                } else {
+
+                    futureValue =
+                        amount *
+                        (
+                            (Math.pow(
+                                1 + yearlyRate,
+                                years
+                            ) - 1) / yearlyRate
+                        ) *
+                        (1 + yearlyRate);
+
+                }
+
+            }
+
+
+            /* LUMPSUM */
+
+            else {
+
+                investedAmount = amount;
+
+                const rate =
+                    annualRate / 100;
+
+                futureValue =
+                    amount *
+                    Math.pow(
+                        1 + rate,
+                        years
+                    );
+
+            }
+
+
+            const estimatedReturn =
+                futureValue - investedAmount;
+
+
+            document.getElementById("invested").textContent =
+                formatMoney(investedAmount);
+
+
+            document.getElementById("returns").textContent =
+                formatMoney(estimatedReturn);
+
+
+            document.getElementById("total").textContent =
+                formatMoney(futureValue);
+
+        }
+
+
+        /* ================= FORM ================= */
+
+        const mfForm =
+            document.getElementById("mfForm");
+
+
+        mfForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById("name").value;
+
+
+            const fundType =
+                document.getElementById("fundType").value;
+
+
+            alert(
+                "Thank you " +
+                name +
+                "! Your Mutual Fund enquiry has been received."
+            );
+
+
+            mfForm.reset();
+
+        });
+
+
+        /* ================= INITIAL CALCULATION ================= */
+
+        calculateInvestment();
+
+    </script>
+
+</body>
+
+</html>
+```

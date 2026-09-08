@@ -1,0 +1,1715 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="SIP investment planning and consultation by Amandeep Singh. Explore SIP investment options, calculate potential returns and book a consultation.">
+
+    <title>SIP Investment | Amandeep Singh</title>
+
+
+    <style>
+
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            background: #071a3d;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .navbar {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #48b6ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #48b6ff;
+        }
+
+        .nav-button {
+            background: #48b6ff;
+            padding: 11px 18px;
+            border-radius: 8px;
+            color: #071a3d !important;
+            font-weight: bold;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            background:
+                linear-gradient(
+                    135deg,
+                    #071a3d,
+                    #0b3270
+                );
+
+            color: white;
+            padding: 100px 0;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(72,182,255,0.15);
+            color: #71c9ff;
+            padding: 8px 16px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #48b6ff;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #d9e5f8;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #48b6ff;
+            color: #071a3d;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .secondary-btn {
+            border: 1px solid #7da5d9;
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: white;
+            color: #071a3d;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+            color: #071a3d;
+        }
+
+        .section-heading p {
+            color: #64748b;
+        }
+
+
+        /* =========================
+           BENEFITS
+        ========================== */
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(7,26,61,0.08);
+            transition: 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .benefit-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            background: #e6f5ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 10px;
+            color: #071a3d;
+        }
+
+        .benefit-card p {
+            color: #64748b;
+        }
+
+
+        /* =========================
+           RETURN SECTION
+        ========================== */
+
+        .return-section {
+            background: #eef4fb;
+        }
+
+        .return-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .return-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #e1e8f2;
+            transition: 0.3s;
+        }
+
+        .return-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(7,26,61,0.10);
+        }
+
+        .return-card h3 {
+            font-size: 27px;
+            color: #071a3d;
+        }
+
+        .return-card .period {
+            color: #48a9ec;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .return-card p {
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           MARKET DATA
+        ========================== */
+
+        .market-box {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(7,26,61,0.08);
+        }
+
+        .market-box h3 {
+            color: #071a3d;
+            margin-bottom: 10px;
+        }
+
+        .market-box p {
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .market-link {
+            display: inline-block;
+            background: #071a3d;
+            color: white;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .market-link:hover {
+            background: #48b6ff;
+            color: #071a3d;
+        }
+
+
+        /* =========================
+           CALCULATOR
+        ========================== */
+
+        .calculator-section {
+            background: #071a3d;
+        }
+
+        .calculator-heading h2 {
+            color: white;
+        }
+
+        .calculator-heading p {
+            color: #b8c8df;
+        }
+
+        .calculator {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 950px;
+            margin: auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .input-group {
+            margin-bottom: 22px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 9px;
+            color: #172033;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #d6deea;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: #48b6ff;
+        }
+
+        .slider-value {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        #rateValue {
+            color: #0788d1;
+            font-weight: bold;
+        }
+
+        .range-slider {
+            width: 100%;
+        }
+
+        .calculate-btn {
+            width: 100%;
+            border: none;
+            padding: 15px;
+            background: #071a3d;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 9px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .calculate-btn:hover {
+            background: #0d3673;
+        }
+
+
+        /* =========================
+           RESULTS
+        ========================== */
+
+        .results {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .result-box {
+            background: #f3f7fc;
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+        }
+
+        .result-box h4 {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .result-box p {
+            font-size: 24px;
+            font-weight: 800;
+            color: #071a3d;
+        }
+
+        .result-box.highlight {
+            background: #e6f5ff;
+        }
+
+        .result-box.highlight p {
+            color: #0788d1;
+        }
+
+
+        /* =========================
+           CONSULTATION
+        ========================== */
+
+        .consultation {
+            background: #f5f7fb;
+        }
+
+        .form-wrapper {
+            max-width: 750px;
+            background: white;
+            margin: auto;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(7,26,61,0.08);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d6deea;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #071a3d;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #0d3673;
+        }
+
+
+        /* =========================
+           DISCLAIMER
+        ========================== */
+
+        .disclaimer {
+            background: #fff8e6;
+            border-left: 4px solid #e0a400;
+            padding: 18px;
+            margin-top: 30px;
+            border-radius: 5px;
+            color: #665000;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #04122d;
+            color: #b8c8df;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: #071a3d;
+                flex-direction: column;
+                padding: 25px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .benefits,
+            .return-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .input-grid,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .results {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .section-heading h2 {
+                font-size: 30px;
+            }
+
+            .calculator,
+            .form-wrapper {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <div class="logo">
+                Amandeep <span>Singh</span>
+            </div>
+
+
+            <div class="menu-btn"
+                 onclick="toggleMenu()">
+                ☰
+            </div>
+
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#benefits">
+                        Why SIP
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#returns">
+                        Returns
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#calculator">
+                        Calculator
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#consultation"
+                       class="nav-button">
+                        Book Consultation
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <span class="hero-tag">
+                    SIP Investment Planning
+                </span>
+
+
+                <h1>
+                    Build Wealth
+                    <span>One SIP at a Time.</span>
+                </h1>
+
+
+                <p>
+                    Start investing systematically and work towards
+                    your long-term financial goals with a disciplined
+                    SIP investment approach.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="#calculator"
+                       class="primary-btn">
+                        Calculate SIP
+                    </a>
+
+                    <a href="#consultation"
+                       class="secondary-btn">
+                        Book Free Consultation
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         BENEFITS
+    ========================== -->
+
+    <section id="benefits">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Why Consider SIP?
+                </h2>
+
+                <p>
+                    SIP can help investors develop a disciplined
+                    approach towards regular investing.
+                </p>
+
+            </div>
+
+
+            <div class="benefits">
+
+
+                <div class="benefit-card">
+
+                    <div class="benefit-icon">
+                        📈
+                    </div>
+
+                    <h3>
+                        Systematic Investing
+                    </h3>
+
+                    <p>
+                        Invest a fixed amount regularly instead of
+                        trying to time the market.
+                    </p>
+
+                </div>
+
+
+                <div class="benefit-card">
+
+                    <div class="benefit-icon">
+                        💰
+                    </div>
+
+                    <h3>
+                        Long-Term Growth
+                    </h3>
+
+                    <p>
+                        Staying invested for longer periods can help
+                        benefit from the power of compounding.
+                    </p>
+
+                </div>
+
+
+                <div class="benefit-card">
+
+                    <div class="benefit-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Goal Planning
+                    </h3>
+
+                    <p>
+                        SIP investments can be structured around
+                        long-term financial goals.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         RETURNS
+    ========================== -->
+
+    <section class="return-section"
+             id="returns">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Explore Investment Horizons
+                </h2>
+
+                <p>
+                    Review different investment horizons and
+                    understand how long-term investing works.
+                </p>
+
+            </div>
+
+
+            <div class="return-cards">
+
+
+                <div class="return-card">
+
+                    <h3>
+                        3 Years
+                    </h3>
+
+                    <div class="period">
+                        Short-Term Horizon
+                    </div>
+
+                    <p>
+                        Explore investment possibilities over
+                        a 3-year period.
+                    </p>
+
+                    <a href="#calculator"
+                       class="primary-btn">
+                        Calculate
+                    </a>
+
+                </div>
+
+
+                <div class="return-card">
+
+                    <h3>
+                        5 Years
+                    </h3>
+
+                    <div class="period">
+                        Medium-Term Horizon
+                    </div>
+
+                    <p>
+                        Understand how regular investing may grow
+                        over a 5-year horizon.
+                    </p>
+
+                    <a href="#calculator"
+                       class="primary-btn">
+                        Calculate
+                    </a>
+
+                </div>
+
+
+                <div class="return-card">
+
+                    <h3>
+                        11 Years
+                    </h3>
+
+                    <div class="period">
+                        Long-Term Horizon
+                    </div>
+
+                    <p>
+                        Explore the potential impact of long-term
+                        investing and compounding.
+                    </p>
+
+                    <a href="#calculator"
+                       class="primary-btn">
+                        Calculate
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MARKET DATA
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Check Mutual Fund Performance
+                </h2>
+
+                <p>
+                    For historical mutual fund performance,
+                    refer to established financial data sources.
+                </p>
+
+            </div>
+
+
+            <div class="market-box">
+
+                <h3>
+                    Historical Market Data
+                </h3>
+
+                <p>
+                    View mutual fund performance data,
+                    historical returns and fund information
+                    on Moneycontrol.
+                </p>
+
+
+                <a
+                    href="https://www.moneycontrol.com/mutual-funds/performance-tracker/returns/index-1.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="market-link">
+
+                    View Historical Returns
+
+                </a>
+
+
+                <div class="disclaimer">
+
+                    Historical returns are provided for
+                    informational purposes only. Past performance
+                    does not guarantee future returns.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SIP CALCULATOR
+    ========================== -->
+
+    <section class="calculator-section"
+             id="calculator">
+
+        <div class="container">
+
+
+            <div class="section-heading calculator-heading">
+
+                <h2>
+                    SIP Investment Calculator
+                </h2>
+
+                <p>
+                    Estimate the potential future value of your
+                    regular investment using your selected
+                    investment amount, period and expected return.
+                </p>
+
+            </div>
+
+
+            <div class="calculator">
+
+
+                <div class="input-grid">
+
+
+                    <!-- AMOUNT -->
+
+                    <div class="input-group">
+
+                        <label for="investmentAmount">
+                            Investment Amount
+                        </label>
+
+                        <input
+                            type="number"
+                            id="investmentAmount"
+                            value="5000"
+                            min="100"
+                            step="100">
+
+                    </div>
+
+
+                    <!-- FREQUENCY -->
+
+                    <div class="input-group">
+
+                        <label for="frequency">
+                            Investment Frequency
+                        </label>
+
+                        <select id="frequency">
+
+                            <option value="monthly">
+                                Monthly
+                            </option>
+
+                            <option value="yearly">
+                                Yearly
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- YEARS -->
+
+                    <div class="input-group">
+
+                        <label for="investmentYears">
+                            Investment Period
+                        </label>
+
+                        <select id="investmentYears">
+
+                            <option value="3">
+                                3 Years
+                            </option>
+
+                            <option value="5"
+                                    selected>
+                                5 Years
+                            </option>
+
+                            <option value="10">
+                                10 Years
+                            </option>
+
+                            <option value="11">
+                                11 Years
+                            </option>
+
+                            <option value="15">
+                                15 Years
+                            </option>
+
+                            <option value="20">
+                                20 Years
+                            </option>
+
+                            <option value="25">
+                                25 Years
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- RATE -->
+
+                    <div class="input-group">
+
+                        <label>
+                            Expected Annual Return
+                        </label>
+
+
+                        <div class="slider-value">
+
+                            <span>
+                                Expected Return
+                            </span>
+
+                            <span id="rateValue">
+                                12%
+                            </span>
+
+                        </div>
+
+
+                        <input
+                            type="range"
+                            id="returnRate"
+                            class="range-slider"
+                            min="1"
+                            max="30"
+                            value="12"
+                            step="0.5">
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    class="calculate-btn"
+                    onclick="calculateSIP()">
+
+                    Calculate SIP Returns
+
+                </button>
+
+
+                <!-- RESULTS -->
+
+                <div class="results">
+
+
+                    <div class="result-box">
+
+                        <h4>
+                            Total Invested Amount
+                        </h4>
+
+                        <p id="investedAmount">
+                            ₹0
+                        </p>
+
+                    </div>
+
+
+                    <div class="result-box highlight">
+
+                        <h4>
+                            Estimated Return
+                        </h4>
+
+                        <p id="estimatedReturn">
+                            ₹0
+                        </p>
+
+                    </div>
+
+
+                    <div class="result-box">
+
+                        <h4>
+                            Total Value
+                        </h4>
+
+                        <p id="totalValue">
+                            ₹0
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="disclaimer">
+
+                    This calculator provides an illustration only.
+                    The selected return rate is an assumption and
+                    is not a guarantee of actual investment returns.
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONSULTATION FORM
+    ========================== -->
+
+    <section class="consultation"
+             id="consultation">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Get SIP Consultation
+                </h2>
+
+                <p>
+                    Share your details and connect with Amandeep
+                    Singh for investment consultation.
+                </p>
+
+            </div>
+
+
+            <div class="form-wrapper">
+
+
+                <form
+                    id="consultationForm"
+                    onsubmit="submitForm(event)">
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your name"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter phone number"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter email address"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="sipAmount">
+                                Monthly SIP Amount
+                            </label>
+
+                            <input
+                                type="number"
+                                id="sipAmount"
+                                placeholder="Example: ₹5000">
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label for="goal">
+                                Investment Goal
+                            </label>
+
+                            <select id="goal">
+
+                                <option>
+                                    Select your goal
+                                </option>
+
+                                <option>
+                                    Wealth Creation
+                                </option>
+
+                                <option>
+                                    Child Education
+                                </option>
+
+                                <option>
+                                    Retirement Planning
+                                </option>
+
+                                <option>
+                                    House Purchase
+                                </option>
+
+                                <option>
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label for="message">
+                                Message
+                            </label>
+
+                            <textarea
+                                id="message"
+                                placeholder="Tell us about your investment requirement">
+                            </textarea>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <button
+                                type="submit"
+                                class="submit-btn">
+
+                                Submit Consultation Request
+
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <h3>
+                Amandeep Singh
+            </h3>
+
+            <p>
+                Investment & Financial Consultation
+            </p>
+
+            <br>
+
+            <p>
+                © 2026 Amandeep Singh. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        function toggleMenu() {
+
+            const nav =
+                document.getElementById("navLinks");
+
+            nav.classList.toggle("active");
+
+        }
+
+
+
+        /* =========================
+           RETURN SLIDER
+        ========================== */
+
+        const returnRate =
+            document.getElementById("returnRate");
+
+        const rateValue =
+            document.getElementById("rateValue");
+
+
+        returnRate.addEventListener(
+            "input",
+            function () {
+
+                rateValue.textContent =
+                    this.value + "%";
+
+            }
+        );
+
+
+
+        /* =========================
+           FORMAT CURRENCY
+        ========================== */
+
+        function formatCurrency(amount) {
+
+            return "₹" +
+                Math.round(amount)
+                .toLocaleString("en-IN");
+
+        }
+
+
+
+        /* =========================
+           SIP CALCULATOR
+        ========================== */
+
+        function calculateSIP() {
+
+
+            const amount =
+                Number(
+                    document.getElementById(
+                        "investmentAmount"
+                    ).value
+                );
+
+
+            const frequency =
+                document.getElementById(
+                    "frequency"
+                ).value;
+
+
+            const years =
+                Number(
+                    document.getElementById(
+                        "investmentYears"
+                    ).value
+                );
+
+
+            const annualRate =
+                Number(
+                    document.getElementById(
+                        "returnRate"
+                    ).value
+                );
+
+
+            if (
+                !amount ||
+                amount <= 0 ||
+                !years ||
+                !annualRate
+            ) {
+
+                alert(
+                    "Please enter valid investment details."
+                );
+
+                return;
+
+            }
+
+
+            let periods;
+
+            let periodicRate;
+
+
+            /*
+                Monthly calculation:
+                Monthly investment + monthly rate
+
+                Yearly calculation:
+                Yearly investment + annual rate
+            */
+
+
+            if (frequency === "monthly") {
+
+                periods = years * 12;
+
+                periodicRate =
+                    annualRate / 100 / 12;
+
+            }
+
+            else {
+
+                periods = years;
+
+                periodicRate =
+                    annualRate / 100;
+
+            }
+
+
+            /*
+                Future Value of SIP
+
+                FV =
+                P × [((1+r)^n - 1) / r]
+                × (1+r)
+
+                For yearly investments,
+                same formula is applied
+                using yearly rate.
+            */
+
+
+            let futureValue;
+
+
+            if (periodicRate === 0) {
+
+                futureValue =
+                    amount * periods;
+
+            }
+
+            else {
+
+                futureValue =
+                    amount *
+                    (
+                        (
+                            Math.pow(
+                                1 + periodicRate,
+                                periods
+                            ) - 1
+                        ) /
+                        periodicRate
+                    ) *
+                    (1 + periodicRate);
+
+            }
+
+
+            const investedAmount =
+                amount * periods;
+
+
+            const estimatedReturn =
+                futureValue -
+                investedAmount;
+
+
+            document.getElementById(
+                "investedAmount"
+            ).textContent =
+                formatCurrency(
+                    investedAmount
+                );
+
+
+            document.getElementById(
+                "estimatedReturn"
+            ).textContent =
+                formatCurrency(
+                    estimatedReturn
+                );
+
+
+            document.getElementById(
+                "totalValue"
+            ).textContent =
+                formatCurrency(
+                    futureValue
+                );
+
+        }
+
+
+
+        /* =========================
+           INITIAL CALCULATION
+        ========================== */
+
+        calculateSIP();
+
+
+
+        /* =========================
+           CONSULTATION FORM
+        ========================== */
+
+        function submitForm(event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById(
+                    "name"
+                ).value;
+
+
+            alert(
+                "Thank you, " +
+                name +
+                "! Your consultation request has been recorded."
+            );
+
+
+            document.getElementById(
+                "consultationForm"
+            ).reset();
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
+```
