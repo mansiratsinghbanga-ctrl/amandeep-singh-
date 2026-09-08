@@ -1,0 +1,1370 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Insurance Services | Amandeep Singh</title>
+
+
+    <!-- ================= CSS ================= -->
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f8fc;
+            color: #172033;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #071a33;
+            padding: 18px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        .menu-btn {
+            display: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 480px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 70px 7%;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(7,26,51,0.94),
+                    rgba(7,26,51,0.94)
+                ),
+                linear-gradient(
+                    135deg,
+                    #0f3b6d,
+                    #071a33
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #dbeafe;
+            margin-bottom: 30px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+
+            background: #38bdf8;
+
+            color: #071a33;
+
+            padding: 14px 28px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* ================= COMMON SECTION ================= */
+
+        .section {
+            padding: 75px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #071a33;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+
+        /* ================= INSURANCE CARDS ================= */
+
+        .insurance-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 25px;
+        }
+
+        .insurance-card {
+            background: white;
+
+            padding: 32px 25px;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            border: 1px solid #e2e8f0;
+
+            box-shadow:
+                0 8px 30px
+                rgba(15,23,42,0.07);
+
+            transition: 0.3s;
+        }
+
+        .insurance-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(15,23,42,0.13);
+        }
+
+        .insurance-icon {
+
+            width: 75px;
+            height: 75px;
+
+            margin: 0 auto 20px;
+
+            background: #e0f2fe;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 38px;
+        }
+
+        .insurance-card h3 {
+            color: #071a33;
+
+            font-size: 22px;
+
+            margin-bottom: 12px;
+        }
+
+        .insurance-card p {
+            color: #64748b;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-bottom: 20px;
+        }
+
+        .card-btn {
+
+            display: inline-block;
+
+            background: #071a33;
+
+            color: white;
+
+            padding: 10px 18px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .card-btn:hover {
+            background: #38bdf8;
+            color: #071a33;
+        }
+
+
+        /* ================= WHY INSURANCE ================= */
+
+        .why-section {
+            background: white;
+        }
+
+        .why-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .why-card {
+
+            padding: 30px;
+
+            background: #f8fafc;
+
+            border-radius: 14px;
+
+            border: 1px solid #e2e8f0;
+
+            transition: 0.3s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .why-card h3 {
+            color: #071a33;
+
+            margin-bottom: 12px;
+        }
+
+        .why-card p {
+            color: #64748b;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= COVERAGE SECTION ================= */
+
+        .coverage-section {
+            background: #eef5fb;
+        }
+
+        .coverage-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        .coverage-card {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 14px;
+
+            border-left: 5px solid #38bdf8;
+
+            box-shadow:
+                0 8px 25px
+                rgba(15,23,42,0.06);
+        }
+
+        .coverage-card h3 {
+            color: #071a33;
+
+            margin-bottom: 10px;
+        }
+
+        .coverage-card p {
+            color: #64748b;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= FORM ================= */
+
+        .form-section {
+            background: white;
+        }
+
+        .form-container {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 40px;
+
+            background: #f8fafc;
+
+            border-radius: 18px;
+
+            border: 1px solid #e2e8f0;
+        }
+
+        .form-container h2 {
+
+            text-align: center;
+
+            color: #071a33;
+
+            margin-bottom: 10px;
+        }
+
+        .form-container > p {
+
+            text-align: center;
+
+            color: #64748b;
+
+            margin-bottom: 30px;
+        }
+
+        .form-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .form-group {
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+
+            font-weight: bold;
+
+            color: #334155;
+
+            font-size: 14px;
+
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+
+            padding: 13px;
+
+            border: 1px solid #cbd5e1;
+
+            border-radius: 7px;
+
+            outline: none;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+
+            border-color: #38bdf8;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(56,189,248,0.12);
+        }
+
+        .form-group textarea {
+
+            min-height: 120px;
+
+            resize: vertical;
+        }
+
+        .submit-btn {
+
+            grid-column: 1 / -1;
+
+            padding: 15px;
+
+            background: #071a33;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+
+            background: #38bdf8;
+
+            color: #071a33;
+        }
+
+
+        /* ================= DISCLAIMER ================= */
+
+        .disclaimer {
+
+            padding: 25px 7%;
+
+            text-align: center;
+
+            color: #64748b;
+
+            font-size: 13px;
+
+            background: #f5f8fc;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background: #071a33;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        footer p {
+
+            color: #cbd5e1;
+
+            font-size: 14px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+
+            .insurance-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .why-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+
+                display: none;
+
+                position: absolute;
+
+                top: 65px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: #071a33;
+
+                flex-direction: column;
+
+                text-align: center;
+
+                padding: 20px;
+
+                gap: 18px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section {
+                padding: 55px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 29px;
+            }
+
+            .insurance-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .coverage-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+
+                padding: 25px;
+            }
+
+            .form-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full,
+            .submit-btn {
+
+                grid-column: auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+                Amandeep <span>Singh</span>
+
+            </div>
+
+
+            <div class="menu-btn" id="menuBtn">
+
+                ☰
+
+            </div>
+
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sip.html">
+                        SIP
+                    </a>
+                </li>
+
+                <li>
+                    <a href="mutual-funds.html">
+                        Mutual Funds
+                    </a>
+                </li>
+
+                <li>
+                    <a href="insurance.html">
+                        Insurance
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+
+                Protect What
+                <span>Matters Most</span>
+
+            </h1>
+
+
+            <p>
+
+                Explore suitable insurance solutions for
+                your vehicle, electronics and health with
+                professional assistance.
+
+            </p>
+
+
+            <a
+                href="#contact"
+                class="hero-btn">
+
+                Get Insurance Assistance
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= INSURANCE OPTIONS ================= -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>
+                Insurance Solutions
+            </h2>
+
+            <p>
+                Choose the type of insurance you are looking for
+            </p>
+
+        </div>
+
+
+        <div class="insurance-grid">
+
+
+            <!-- CAR INSURANCE -->
+
+            <div class="insurance-card">
+
+                <div class="insurance-icon">
+                    🚗
+                </div>
+
+                <h3>
+                    Car Insurance
+                </h3>
+
+                <p>
+
+                    Explore suitable car insurance
+                    options and coverage based on
+                    your requirements.
+
+                </p>
+
+                <a
+                    href="#contact"
+                    class="card-btn"
+                    onclick="selectInsurance('Car Insurance')">
+
+                    Enquire Now
+
+                </a>
+
+            </div>
+
+
+
+            <!-- BIKE INSURANCE -->
+
+            <div class="insurance-card">
+
+                <div class="insurance-icon">
+                    🏍️
+                </div>
+
+                <h3>
+                    Bike Insurance
+                </h3>
+
+                <p>
+
+                    Explore insurance options for
+                    your two-wheeler and understand
+                    available coverage.
+
+                </p>
+
+                <a
+                    href="#contact"
+                    class="card-btn"
+                    onclick="selectInsurance('Bike Insurance')">
+
+                    Enquire Now
+
+                </a>
+
+            </div>
+
+
+
+            <!-- ELECTRONIC INSURANCE -->
+
+            <div class="insurance-card">
+
+                <div class="insurance-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Electronic Insurance
+                </h3>
+
+                <p>
+
+                    Get assistance in exploring
+                    insurance options for eligible
+                    electronic devices.
+
+                </p>
+
+                <a
+                    href="#contact"
+                    class="card-btn"
+                    onclick="selectInsurance('Electronic Insurance')">
+
+                    Enquire Now
+
+                </a>
+
+            </div>
+
+
+
+            <!-- HEALTH INSURANCE -->
+
+            <div class="insurance-card">
+
+                <div class="insurance-icon">
+                    🏥
+                </div>
+
+                <h3>
+                    Health Insurance
+                </h3>
+
+                <p>
+
+                    Explore health insurance options
+                    designed to help manage eligible
+                    healthcare expenses.
+
+                </p>
+
+                <a
+                    href="#contact"
+                    class="card-btn"
+                    onclick="selectInsurance('Health Insurance')">
+
+                    Enquire Now
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= WHY INSURANCE ================= -->
+
+    <section class="section why-section">
+
+        <div class="section-title">
+
+            <h2>
+                Why Consider Insurance?
+            </h2>
+
+            <p>
+                Insurance can help reduce financial uncertainty
+            </p>
+
+        </div>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <h3>
+                    🛡️ Financial Protection
+                </h3>
+
+                <p>
+
+                    Insurance can help reduce the
+                    financial impact of certain unexpected
+                    events covered under a policy.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <h3>
+                    📋 Suitable Coverage
+                </h3>
+
+                <p>
+
+                    Understand different coverage options
+                    and evaluate what may suit your
+                    requirements.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <h3>
+                    🤝 Professional Assistance
+                </h3>
+
+                <p>
+
+                    Get assistance in understanding
+                    policy features, requirements and
+                    available options.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= COVERAGE INFORMATION ================= -->
+
+    <section class="section coverage-section">
+
+        <div class="section-title">
+
+            <h2>
+                Insurance Categories
+            </h2>
+
+            <p>
+                Explore different protection requirements
+            </p>
+
+        </div>
+
+
+        <div class="coverage-grid">
+
+
+            <div class="coverage-card">
+
+                <h3>
+                    🚗 Motor Protection
+                </h3>
+
+                <p>
+
+                    Vehicle insurance can provide coverage
+                    for eligible risks associated with cars
+                    and other vehicles, subject to policy terms.
+
+                </p>
+
+            </div>
+
+
+            <div class="coverage-card">
+
+                <h3>
+                    🏍️ Two-Wheeler Protection
+                </h3>
+
+                <p>
+
+                    Explore suitable two-wheeler insurance
+                    options based on vehicle details and
+                    required coverage.
+
+                </p>
+
+            </div>
+
+
+            <div class="coverage-card">
+
+                <h3>
+                    💻 Electronic Protection
+                </h3>
+
+                <p>
+
+                    Certain insurance products may provide
+                    protection for eligible electronic equipment
+                    against specified risks.
+
+                </p>
+
+            </div>
+
+
+            <div class="coverage-card">
+
+                <h3>
+                    🏥 Health Protection
+                </h3>
+
+                <p>
+
+                    Health insurance may help cover eligible
+                    medical and hospitalization expenses
+                    according to the selected policy.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT FORM ================= -->
+
+    <section
+        class="section form-section"
+        id="contact">
+
+
+        <div class="form-container">
+
+
+            <h2>
+                Request Insurance Assistance
+            </h2>
+
+
+            <p>
+                Fill in your details and share your requirement.
+            </p>
+
+
+            <form id="insuranceForm">
+
+
+                <div class="form-grid">
+
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter email address"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- INSURANCE TYPE -->
+
+                    <div class="form-group">
+
+                        <label for="insuranceType">
+                            Insurance Type
+                        </label>
+
+                        <select
+                            id="insuranceType"
+                            required>
+
+                            <option value="">
+                                Select Insurance Type
+                            </option>
+
+                            <option value="Car Insurance">
+                                Car Insurance
+                            </option>
+
+                            <option value="Bike Insurance">
+                                Bike Insurance
+                            </option>
+
+                            <option value="Electronic Insurance">
+                                Electronic Insurance
+                            </option>
+
+                            <option value="Health Insurance">
+                                Health Insurance
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- REQUIREMENT -->
+
+                    <div class="form-group full">
+
+                        <label for="requirement">
+                            Your Requirement
+                        </label>
+
+                        <textarea
+                            id="requirement"
+                            placeholder="Tell us what type of insurance assistance you need..."></textarea>
+
+                    </div>
+
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="submit-btn">
+
+                        Submit Enquiry
+
+                    </button>
+
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= DISCLAIMER ================= -->
+
+    <div class="disclaimer">
+
+        <strong>
+            Disclaimer:
+        </strong>
+
+        Insurance products, coverage, eligibility,
+        premiums and terms are subject to the respective
+        insurer's policy documents, underwriting and
+        applicable regulations.
+
+        This website does not guarantee policy issuance
+        or claim settlement.
+
+    </div>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Amandeep Singh. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+
+        /* ================= MOBILE MENU ================= */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuBtn.addEventListener(
+            "click",
+            function() {
+
+                navLinks.classList.toggle("active");
+
+            }
+        );
+
+
+
+        /* ================= SELECT INSURANCE ================= */
+
+        function selectInsurance(type) {
+
+            const insuranceType =
+                document.getElementById("insuranceType");
+
+            insuranceType.value = type;
+
+        }
+
+
+
+        /* ================= FORM SUBMISSION ================= */
+
+        const insuranceForm =
+            document.getElementById("insuranceForm");
+
+
+        insuranceForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("name").value;
+
+
+                const insurance =
+                    document.getElementById("insuranceType").value;
+
+
+                alert(
+                    "Thank you " +
+                    name +
+                    "! Your " +
+                    insurance +
+                    " enquiry has been received."
+                );
+
+
+                insuranceForm.reset();
+
+            }
+        );
+
+
+
+        /* ================= CLOSE MOBILE MENU ================= */
+
+        const navItems =
+            document.querySelectorAll(".nav-links a");
+
+
+        navItems.forEach(
+            function(item) {
+
+                item.addEventListener(
+                    "click",
+                    function() {
+
+                        navLinks.classList.remove("active");
+
+                    }
+                );
+
+            }
+        );
+
+
+    </script>
+
+</body>
+
+</html>
+```
